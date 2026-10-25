@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Order fresh vegetarian and non-vegetarian favourites from Food Corner.">
+  <title>Food Corner — Good food, good mood</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">Freshly prepared • Veg & non-veg favourites • Made with care</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Food Corner home">
+      <span class="brand-mark">FC</span>
+      <span><strong>Food Corner</strong><small>GOOD FOOD, GOOD MOOD</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#menu">Menu</a><a href="#why-us">Our promise</a><a href="#order">Order online</a>
+    </nav>
+    <button class="cart-button" id="open-cart" aria-label="Open cart">Cart <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> YOUR NEIGHBOURHOOD FOOD SPOT</span>
+        <h1>A little joy<br>in <em>every bite.</em></h1>
+        <p>Crave-worthy classics, comforting meals and fresh favourites — ready for your next delicious moment.</p>
+        <div class="hero-actions"><a class="primary-button" href="#menu">Explore the menu <span>↗</span></a><span class="hero-note">Veg & non-veg options</span></div>
+        <div class="hero-proof"><div class="proof-icon">✦</div><div><strong>Made for your cravings</strong><small>Good food, served simply.</small></div></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=85" alt="Freshly prepared food on a table">
+        <div class="floating-card"><span>✦</span><div><strong>Something delicious</strong><small>is just a few taps away</small></div></div>
+        <div class="hero-stamp">FRESH<br><span>•</span> TASTY <span>•</span><br>MADE WITH LOVE</div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <div><span class="eyebrow">THE GOOD STUFF</span><h2>Find your <em>favourite.</em></h2></div>
+        <p>From quick bites to satisfying meals, there's something for every appetite.</p>
+      </div>
+      <div class="menu-tools">
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="All">All items</button>
+          <button class="filter" data-filter="Veg">Veg</button>
+          <button class="filter" data-filter="Non-Veg">Non-veg</button>
+          <button class="filter" data-filter="Snacks">Snacks</button>
+        </div>
+        <label class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Search dishes…" aria-label="Search dishes"></label>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+      <p class="menu-disclaimer">Sample menu and prices are included to help you get started. Update them to match your real menu before publishing.</p>
+    </section>
+
+    <section class="promise-section" id="why-us">
+      <div class="promise-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Fresh ingredients prepared for a meal"></div>
+      <div class="promise-copy"><span class="eyebrow">THE FOOD CORNER WAY</span><h2>Simple food.<br><em>Serious flavour.</em></h2><p>We believe a good meal can turn an ordinary day around. Pick what you're craving, place your order, and we'll take it from there.</p><div class="promise-points"><div><span>01</span><strong>Made for your mood</strong></div><div><span>02</span><strong>Veg and non-veg choices</strong></div><div><span>03</span><strong>Easy ordering on your phone</strong></div></div></div>
+    </section>
+
+    <section class="order-banner" id="order"><div><span class="eyebrow">READY WHEN YOU ARE</span><h2>Your next favourite meal<br>is waiting.</h2></div><a href="#menu" class="light-button">Choose your dishes <span>↗</span></a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">FC</span><span><strong>Food Corner</strong><small>GOOD FOOD, GOOD MOOD</small></span></a><p>Made with care. Enjoy every bite.</p><span class="copyright">© <span id="year"></span> Food Corner</span></footer>
+
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Your cart" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">YOUR SELECTION</span><h2>Your cart</h2></div><button class="icon-button" id="close-cart" aria-label="Close cart">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-bottom"><div class="total-row"><span>Subtotal</span><strong id="cart-total">₹0</strong></div><p class="small-note">Delivery charges, if any, can be confirmed when you place your order.</p><button class="primary-button full-button" id="checkout-button">Continue to checkout <span>→</span></button></div>
+  </aside>
+
+  <div class="modal-backdrop" id="checkout-backdrop">
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div class="drawer-header"><div><span class="eyebrow">ALMOST THERE</span><h2 id="checkout-title">Checkout</h2></div><button class="icon-button" id="close-checkout" aria-label="Close checkout">×</button></div>
+      <p class="checkout-intro">Enter your details. We'll prepare your order message in WhatsApp so you can send it to Food Corner.</p>
+      <form id="checkout-form">
+        <label>Full name<input name="customerName" autocomplete="name" required placeholder="Your name"></label>
+        <label>Phone number<input name="customerPhone" autocomplete="tel" type="tel" required placeholder="Your contact number"></label>
+        <label>Order type<select name="orderType" required><option value="Delivery">Home delivery</option><option value="Pickup">Pickup / takeaway</option></select></label>
+        <label id="address-label">Delivery address<textarea name="address" rows="2" placeholder="House number, street, area"></textarea></label>
+        <label>Extra instructions (optional)<textarea name="notes" rows="2" placeholder="Spice level, landmark, etc."></textarea></label>
+        <div class="checkout-total"><span>Order subtotal</span><strong id="checkout-total">₹0</strong></div>
+        <button class="primary-button full-button" type="submit">Send order on WhatsApp <span>↗</span></button>
+        <p class="privacy-note">Your order isn't submitted until you press Send in WhatsApp.</p>
+      </form>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
